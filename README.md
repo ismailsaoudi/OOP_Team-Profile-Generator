@@ -3,12 +3,13 @@
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/ismailsaoudi/
-[contributors-url]: https://github.com/ismailsaoudi
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[license-url]: https://github.com/ismailsaoudi/OOP_Team-Profile-Generator/blob/main/license.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://www.linkedin.com/in/ismail-saoudi/
+
+[nodejs.org]: https://img.shields.io/badge/-Nodejs-61DAFB?=white&style=for-the-badge
+[nodejs-url]: https://nodejs.org
 [Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 [Bootstrap-url]: https://getbootstrap.com
 [product-screenshot]: images/screenshot.png
@@ -74,17 +75,14 @@ A Node JS app used to generate a webPage showing all data entred by a manger to 
 
 ### Built With
 
-* [![Next][node.js]][nodejs-url]
-* [![HTML][HTML]][HTML-url]
-* [![javascript][JavaScript]][Javascript-url]
-* [![npm][npm]][npm-url]
+* [![nodejs][nodejs.org]][nodejs-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### tested With
-[![jest][jest.js]][jest-url]
+jest
 
 <!-- GETTING STARTED -->
 ## Getting Started
