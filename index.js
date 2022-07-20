@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const Manager = require("./lib/Manager");
-// please import Engineer and Intern libraries
+
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
@@ -9,10 +9,6 @@ const generateHTML = require("./src/generateHTML");
 const managerCard = require("./src/managerHTML");
 const engineerCard = require("./src/engineerHTML");
 const internCard = require("./src/internHTML");
-
-//import engineer and intern cards same as manager card above
-
-// you must create engineer and intern questions separately
 
 const employeeArray = [];
 const managerQuestions = [
@@ -90,7 +86,7 @@ function init() {
       response.managerName,
       response.managerId,
       response.managerEmail,
-      response.managerOfficeNumber,
+      response.managerOfficeNumber
     );
 
     employeeArray.push(manager);
@@ -136,36 +132,31 @@ function addEmployee() {
 }
 
 function addEngineer() {
-  //ask questions about engineer using inquirer
-    // create new instance engineer and add it to the employeeArray using push
-    inquirer.prompt(engineerQuestions).then((response) => {
-        const engineer = new Engineer(
-          response.engineerName,
-          response.engineerId,
-          response.engineerEmail,
-          response.engineerGithub,
-        );
-        employeeArray.push(engineer);
+  inquirer.prompt(engineerQuestions).then((response) => {
+    const engineer = new Engineer(
+      response.engineerName,
+      response.engineerId,
+      response.engineerEmail,
+      response.engineerGithub
+    );
+    employeeArray.push(engineer);
 
     confirmNext();
   });
 }
 
 function addIntern() {
-  //ask questions about intern using inquirer
-  // create new instance intern and add it to the employeeArray using push
   inquirer.prompt(internQuestions).then((response) => {
     const intern = new Intern(
       response.internName,
       response.internId,
       response.internEmail,
-      response.internGithub,
+      response.internGithub
     );
     employeeArray.push(intern);
 
-  confirmNext();
-})
-
+    confirmNext();
+  });
 }
 
 function createHTML() {
@@ -175,12 +166,11 @@ function createHTML() {
 
   for (let i = 0; i < employeeArray.length; i++) {
     if (employeeArray[i].getRole() === "Manager") {
-      cards = cards + managerCard (employeeArray[i]);
-    } else if (employeeArray[i].getRole() === "Engineer"){
-        cards = cards + engineerCard(employeeArray[i]);
-      //same as manager card but for Engineer card
-    } else { cards = cards + internCard(employeeArray[i]);
-      //same as manager card but for intern card
+      cards = cards + managerCard(employeeArray[i]);
+    } else if (employeeArray[i].getRole() === "Engineer") {
+      cards = cards + engineerCard(employeeArray[i]);
+    } else {
+      cards = cards + internCard(employeeArray[i]);
     }
   }
   fs.writeFileSync("./dist/team.html", generateHTML(cards));
